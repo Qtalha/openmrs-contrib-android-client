@@ -1,0 +1,22 @@
+ pipeline{
+    agent {label 'OPENJDK-11'}
+    stages
+    {
+        stage('pull from vcs') 
+        {
+            steps{
+                git url: 'https://github.com/Qtalha/openmrs-contrib-android-client.git',
+                branch: 'SPRINT_1_DEV'
+
+            }
+        }
+        stage('build')
+        {
+            steps
+            {
+                sh 'mvn package' 
+            }
+
+        }
+    }
+}
