@@ -1,4 +1,4 @@
- pipelin e{
+ pipeline {
     agent {label 'OPENJDK-11'}
     stages{
         stage('pull from vcs') {
